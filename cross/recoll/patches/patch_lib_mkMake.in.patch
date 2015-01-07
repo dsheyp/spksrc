@@ -1,0 +1,10 @@
+--- lib/mkMake.in_old	2015-01-07 13:55:53.777529414 +0000
++++ lib/mkMake.in	2015-01-07 13:59:56.917532667 +0000
+@@ -145,6 +145,7 @@
+ \$(LIBRECOLL): \$(DEPS) \$(OBJS)
+ 	\$(CXX) -shared -Wl,--no-undefined -Wl,--warn-unresolved-symbols \
+           -Wl,-soname=\$(LIBRECOLL) -o \$(LIBRECOLL) \$(OBJS) \
++           -L../../install/usr/local/lib \
+            \$(LIBXAPIAN) \$(LIBICONV) \$(X_LIBX11) \$(LIBSYS)
+ 	rm -f librecoll.so
+ 	ln -s \$(LIBRECOLL) librecoll.so

@@ -1,0 +1,10 @@
+--- mk/localdefs.in_old	2015-01-07 14:16:17.365547133 +0000
++++ mk/localdefs.in	2015-01-07 14:20:35.117546081 +0000
+@@ -33,6 +33,7 @@
+ 	      $(INCICONV) $(XAPIANCXXFLAGS) $(X_CFLAGS) \
+ 	      -DRECOLL_DATADIR=\"$(RECOLL_DATADIR)\" \
+ 	      $(PICFLAGS) \
++              -L../../install/usr/local/lib -Wl,-rpath-link,../../install/usr/local/lib \
+ 	      @DEFS@
+ 
+ CXXFLAGS ?= @CXXFLAGS@

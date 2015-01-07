@@ -12,8 +12,7 @@ COMMENT  = A full-text search tool.
 LICENSE  =
 
 GNU_CONFIGURE = 1
-CONFIGURE_ARGS = --includedir=/usr/include --disable-qtgui --disable-x11mon
-ADDITIONAL_CFLAGS = LD_LIBRARY_PATH= ${LD_LIBRARY_PATH}:/home/jpp/src/spksrc/cross/xapian/work-cedarview-5.1/install/usr/local/lib
+CONFIGURE_ARGS = --disable-qtgui --disable-x11mon --disable-python-module
 
 #CONFIGURE_TARGET = nope
 #INSTALL_TARGET = nope
@@ -23,3 +22,7 @@ ADDITIONAL_CFLAGS = LD_LIBRARY_PATH= ${LD_LIBRARY_PATH}:/home/jpp/src/spksrc/cro
 #	@echo $(PKG_DIST_NAME)
 
 include ../../mk/spksrc.cross-cc.mk
+
+jpp-smart-clean:
+	rm -rf work-cedarview-5.1/$(PKG_DIR)
+	rm -f work-cedarview-5.1/.recoll*	
